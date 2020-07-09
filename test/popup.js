@@ -1,25 +1,24 @@
-let tb = document.querySelectorAll('.tabs__item');
+var slideWidth = $(".boxarea").width();
+var contentW = $(".content-area").width();
 
-tb.forEach(function(userItem) {
-  userItem.addEventListener('click', fTabs);
+$(document).ready(function() {
+  $('.content').css({width:contentW});
+  $('nav ul li').click(function() {
+    var tabindex = $(this).index();
+    var jump = (slideWidth * tabindex);
+    console.log(tabindex);
+    console.log(jump)
+    $(".container").css({
+      transform: "translate3d(-" + jump + "px, 0, 0)"
+    });
   });
+  $("a.n-tab").click(function() {
+    var $active = $('.active');
+    $active.removeClass("active");
+    $(this).addClass("active");
+  })
+});
 
-function fTabs(event) {
-  // data-tab - номер вкладки которую нужно отобразить
-  let dataTab = event.target.getAttribute('data-tab');
-  // отключаю active
-  let tabsItem = document.getElementsByClassName('tabs__item');
-  for (let i = 0; i < tabsItem.length; i++) {
-    tabsItem[i].classList.remove('active');
-  }
-  // все вкладки с содержимым
-  let tabBody = document.getElementsByClassName('tabs__block');
-  for (let i = 0; i < tabBody.length; i++) {
-    if (dataTab == i) {
-      tabBody[i].style.display = 'block';
-      tabsItem[i].classList.add('active');
-    } else {
-      tabBody[i].style.display = 'none';
-    }
-  }
-}
+	$(window).on('resize', function(evt) {
+  $('.content').css({width:contentW});
+	});

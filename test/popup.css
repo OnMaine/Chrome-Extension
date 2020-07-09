@@ -1,106 +1,39 @@
-*,
-*:before,
-*:after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+/* ********************************************** */
+* {
+  font-family: arial;
 }
-
-html,
 body {
-  font-size: 16px;
+  max-width: 300px;
+  margin: 0;
 }
 
-.wrapper {
-  position: relative;
-  overflow: hidden;
+p {
+  /* 	padding: 10px; */
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+  color: #484747;
 }
 
-.content {
-  width: 275px;
+.boxarea {
   margin: 0 auto;
 }
 
-.tabs__items {
-  display: flex;
+.content-area {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
-.tabs__item {
-  flex: 0 1 33.333%;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #7E7D7E;
-}
-
-.tabs__item:hover {
-  color: #2B0A1E;
-}
-
-.active {
-  color: #B62978;
-}
-
-.active:hover {
-  color: #B62978;
-}
-
-.tabs__block {
-  font-size: 18px;
-  display: none;
-  text-align: center;
+.content {
+  position: relative;
+  display: inline-block;
+  white-space: normal;
   max-height: 400px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
-.tabs__block h2 {
-  padding: 10px 25px 25px;
-}
-
-.card,
-.store {
-  padding: 10px;
-  margin: 15px;
-  border: solid 1px #ededed;
-  font-size: 12px;
-  text-align: left;
-}
-
-.card button,
-.store button {
-  margin-bottom: 10px;
-  padding: 5px;
-  background-color: #FFFFFF;
-  border: solid 1px #ededed;
-  font-size: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-  outline: none;
-}
-
-.card button:hover,
-.store button:hover {
-  border-color: #B62978;
-  color: #B62978;
-  transition: 0.5s;
-}
-
-.card button:active,
-.store button:active {
-  background-color: #B62978;
-  color: #FFFFFF;
-  transition: 0.5s;
-}
-
-.block__content {
-  margin: 100px 0 100px;
-  padding: 10px;
-  font-size: 15px;
-}
-
-.block__three input {
+.content input {
   padding: 12px 30px;
   margin: 15px 10px 10px;
   background-color: #B62978;
@@ -112,17 +45,53 @@ body {
   border-radius: 5px;
 }
 
-.block__three input:hover {
+.content input:hover {
   background-color: #FFFFFF;
   color: #B62978;
   border: 2px solid #B62978;
   transition: 0.5s;
 }
 
-.block__three input:active {
+.content input:active {
   background-color: #B62978;
   color: #FFFFFF;
   transition: 0.3s;
+}
+
+.tabs-cards {
+  padding-top: 10px;
+}
+
+.card {
+  padding: 10px;
+  margin: 15px;
+  border: solid 1px #ededed;
+  font-size: 12px;
+  text-align: left;
+}
+
+.card button {
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #FFFFFF;
+  border: solid 1px #ededed;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.card button:hover {
+  border-color: #B62978;
+  color: #B62978;
+  transition: 0.5s;
+}
+
+.card button:active {
+  background-color: #B62978;
+  color: #FFFFFF;
+  transition: 0.5s;
 }
 
 .store {
@@ -137,31 +106,63 @@ body {
   background-size: cover;
 }
 
-.tabs__block{
-   animation-duration: 0.3s;
-   animation-name: slidein;
+nav {
+  box-sizing: border-box;
+  width: 100%
 }
 
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 200%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
+nav ul.nav-tabs {
+  margin: 0px auto;
+  padding: 0px;
+  display: table;
+  width: 100%;
 }
-/*
-@keyframes slideout {
-  from {
-    margin-left: -300%;
-    width: 300%;
-  }
 
-  to {
-    margin-right: 0%;
-    width: 100%;
-  }
-} */
+.nav-tabs li {
+  font-size: 18px;
+  list-style: none;
+  display: table-cell;
+}
+
+.nav-tabs li:last-child {
+  padding-right: 0px;
+}
+
+.nav-tabs li a {
+  display: block;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: #7E7D7E;
+}
+
+.nav-tabs li a:hover {
+  color: #2B0A1E;
+}
+
+.nav-tabs li a.active {
+  color: #B62978;
+}
+
+section {
+  margin: 0px 0px;
+  padding: 0px;
+  float: left;
+  text-align: center;
+}
+
+.block-content{
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.container {
+  height: 100%;
+  width: 5000px;
+  margin: 0px;
+  padding: 0;
+  padding-top: 0px;
+  position: block;
+  white-space: nowrap;
+  transition: all 0.3s ease-in;
+}
